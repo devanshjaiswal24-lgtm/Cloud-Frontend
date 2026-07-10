@@ -29,6 +29,13 @@ try {
 
 const app = express();
 
+app.get("/", (_req, res) => {
+  res.json({
+    success: true,
+    message: "Library Management Backend is running"
+  });
+});
+
 app.use(helmet());
 app.use(cors({ origin: process.env.CLIENT_URL || true }));
 app.use(express.json());
